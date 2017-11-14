@@ -10,15 +10,15 @@
                         http://www.springframework.org/schema/mvc      
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">    
 
-    <context:component-scan base-package="com.cn.hnust" />    
+    <context:component-scan base-package="projetPAM" />    
   
-    <!-- <bean id="propertyConfigurer"    
+    <bean id="propertyConfigurer"    
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">    
         <property name="location" value="classpath:jdbc.properties" />    
-    </bean> -->    
+    </bean>
     
-    <context:property-placeholder ignore-unresolvable="true" location="classpath:jdbc.properties" />  
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"   
+   <context:property-placeholder ignore-unresolvable="true" location="classpath:jdbc.properties" />
+    <!-- <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"   
         destroy-method="close">    
         <property name="driverClassName" value="${jdbc.driver}" />    
         <property name="url" value="${jdbc.url}" />    
@@ -34,22 +34,22 @@
         <property name="minIdle" value="${jdbc.minIdle}"></property>    
 
         <property name="maxWait" value="${jdbc.maxWait}"></property>    
-    </bean>    
+    </bean>     -->
     
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">    
+ <!--    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">    
         <property name="dataSource" ref="dataSource" />    
  
-        <property name="mapperLocations" value="classpath:com/cn/hnust/mapping/*.xml"></property>    
+        <property name="mapperLocations" value="classpath:src/main/java/projetPAM/mapping/*.xml"></property>    
     </bean>    
-     
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">    
-        <property name="basePackage" value="com.cn.hnust.dao" />    
+      -->
+    <!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">    
+        <property name="basePackage" value="projetPAM.dao" />    
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>    
     </bean>    
-     
-    <bean id="transactionManager"    
+     --> 
+<!--     <bean id="transactionManager"    
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">    
         <property name="dataSource" ref="dataSource" />    
-    </bean>    
+    </bean>  -->   
     
 </beans>    
