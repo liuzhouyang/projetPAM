@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pam.dao.IUtilisateurDao">
+	<insert id="insertUtilisateur">
+		insert into utilisateur(nom, prenom, email, password, rol) values(#{nom},#{prenom}, #{email}, #{password}, #{rol})
+	</insert>
+
+	<insert id="insertUtilisateurCatcheId">
+		insert into utilisateur(nom, prenom, email, password, rol) values(#{nom},#{prenom}, #{email}, #{password}, #{rol})
+		<selectKey resultType="int" keyProperty="idUtilisateur" order="AFTER">
+			select @@identity
+		</selectKey>
+	</insert>
+	
+	<delete id="deleteUtilisateurById">
+		delete from utilisateur where idUtilisateur=#{xxx}  
+	</delete>
+	
+	<update id="updateUtilisateur">
+		update utilisateur set nom=#{nom}, prenom=#{prenom}, email=#{email}, password=#{password}, rol=#{rol} where idUtilisateur=#{idUtilisateur}
+	</update>
+	
+	<select id="selectAllUtilisateurs" resultType="Utilisateur">
+		select * from utilisateur
+	</select>
+	
+	<select id="selectUtilisateurByEmail" resultType="Utilisateur">
+		select * from utilisateur where email=#{xxx}
+	</select>
+	
+	<select id="selectUtilisateurById" resultType="Utilisateur">
+		select * from utilisateur where idUtilisateur=#{xxx}
+	</select>
+	
+</mapper>

@@ -1,8 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<%@page import="javafx.scene.control.Alert"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<!DOCTYPE html>
 <html lang="">
 <head>
 	<meta charset="utf-8">
 	<title>Retina Dashboard</title>
+	<base href="<%=basePath%>">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="robots" content="" />
