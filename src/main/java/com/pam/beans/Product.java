@@ -4,6 +4,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Product {
 	
 	private Integer idProduct;
@@ -28,13 +30,33 @@ public class Product {
 	@NotEmpty(message="descirption de produit ne peut pas etre null")
 	@Size(min=1, max=1000, message="longeur de descirption doit entre {min}-{max}")
 	@Pattern(regexp="^[a-zA-Zàâäéèêëçùûüôö]+[-']?[a-zA-Zàâäéèêëçùûüôö]*$", message="invalid nom format")
-	private String descirption;
+	private String description;
 	@NotEmpty(message="image de produit ne peut pas etre null")
 	@Size(min=1, max=1000, message="longeur de image doit entre {min}-{max}")
 	@Pattern(regexp="^[a-zA-Zàâäéèêëçùûüôö]+[-']?[a-zA-Zàâäéèêëçùûüôö]*$", message="invalid nom format")
 	private String image;
 	private int Utilisateur_idUtilisateur;
 	
+	private MultipartFile img;
+	
+/*	public Product() {
+		super();
+	}
+	
+	public Product(String title, String marque, String categorie, double poid, double prix, String couleur, String taille, String description, MultipartFile img, String image) {
+		super();
+		this.title = title;
+		this.marque = marque;
+		this.categorie = categorie;
+		this.poid = poid;
+		this.prix = prix;
+		this.couleur = couleur;
+		this.taille = taille;
+		this.description = description;
+		this.img = img;
+		this.image = image;
+	}
+	*/
 	public Integer getIdProduct() {
 		return idProduct;
 	}
@@ -83,11 +105,11 @@ public class Product {
 	public void setTaille(String taille) {
 		this.taille = taille;
 	}
-	public String getDescirption() {
-		return descirption;
+	public String getDescription() {
+		return description;
 	}
-	public void setDescirption(String descirption) {
-		this.descirption = descirption;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public String getImage() {
 		return image;
@@ -100,5 +122,11 @@ public class Product {
 	}
 	public void setUtilisateur_idUtilisateur(int utilisateur_idUtilisateur) {
 		Utilisateur_idUtilisateur = utilisateur_idUtilisateur;
+	}
+	public MultipartFile getImg() {
+		return img;
+	}
+	public void setImg(MultipartFile img) {
+		this.img = img;
 	}
 }

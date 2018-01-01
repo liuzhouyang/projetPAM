@@ -5,8 +5,8 @@
 <%@include file="commun.jsp"%>
 
 <section class="alert">
-	<form method="link" action="page-new.html">
-		 <button class="green">Create new page</button>
+	<form method="link" action="addProduct.jsp">
+		 <button class="green">Create new product</button>
 	</form>
 </section>
 <section class="content">
@@ -43,7 +43,7 @@
 					<tbody>
 					<c:forEach var="p" items="${list}">
 						<tr>
-							<td><input type="checkbox" />${p.id}</td>
+							<td><input type="checkbox" />${p.idProduct}</td>
 							<td>${p.title}</td>
 							<td>${p.marque}</td>
 							<td>${p.categorie}</td>
@@ -68,8 +68,10 @@
 					</c:forEach>
 					</tbody>
 				</table>
+
 		</div>
 	</section>
 </section>
+
 
 <%@include file="footer.jsp"%>

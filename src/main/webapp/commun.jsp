@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</ul>	
 		</li>
 		<li>
-			<a href="product.jsp"><span class="icon">&#127748;</span> Produits <span class="pip">7</span></a>
+			<a href="product/listproduct.do"><span class="icon">&#127748;</span> Produits <span class="pip">7</span></a>
 			<ul class="submenu">
 				<li><a href="files-upload.jsp">Créer un produit</a></li>
 				<li><a href="files.jsp">Créer des produits via XML</a></li>
