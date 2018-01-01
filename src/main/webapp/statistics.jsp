@@ -1,9 +1,10 @@
-﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ include file="commun.jsp" %>
+<!DOCTYPE html>
 <html lang="">
 <head>
 	<meta charset="utf-8">
-	<title>Carrot ERP</title>
+	<title>Retina Dashboard</title>
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="robots" content="" />
@@ -29,74 +30,6 @@
 		</div>
 		</div>
 	</section>
-	
-	<div class="widget-container">
-		<section class="widget small">
-			<header>
-				<span class="icon">&#59168;</span>
-				<hgroup>
-					<h1>Latest comments</h1>
-					<h2>What they're saying</h2>
-				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
-			</header>
-			<div class="content no-padding timeline">
-				<div class="tl-post comments">
-					<span class="icon">&#59168;</span>
-					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
-						<span class="reply"><input type="text" value="Respond to comment..."/></span>
-					</p>
-				</div>
-				<div class="tl-post comments">
-					<span class="icon">&#59168;</span>
-					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
-						<span class="reply"><input type="text" value="Respond to comment..."/></span>
-					</p>
-				</div>
-				<span class="show-more"><a	 href="#">More</a></span>
-			</div>
-		</section>
-		
-		<section class="widget 	small">
-			<header>
-				<span class="icon">&#128319;</span>
-				<hgroup>
-					<h1>Quick Post</h1>
-					<h2>Speed things up</h2>
-				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
-			</header>
-			<div class="content">
-				<div class="field-wrap">
-					<input type="text" value="Title"/>
-				</div>
-				<div class="field-wrap">
-					<textarea id="quick_post" rows="5"></textarea>
-				</div>
-				<button type="submit" class="green">Post</button> <button type="submit" class="">Preview</button>
-			</div>
-		</section>
-	</div>
 	
 	<div class="widget-container">
 		<section class="widget small">
@@ -143,10 +76,10 @@
 		
 		<section class="widget small">
 			<header> 
-				<span class="icon">&#128363;</span>
+				<span class="icon">&#9716;</span>
 				<hgroup>
-					<h1>Timeline</h1>
-					<h2>Insiders news</h2>
+					<h1>Pie chart</h1>
+					<h2>Display data as pie charts</h2>
 				</hgroup>
 				<aside>
 					<span>
@@ -159,27 +92,12 @@
 					</span>
 				</aside>
 			</header>
-			<div class="content no-padding timeline">
-				<div class="tl-post">
-					<span class="icon">&#128206;</span>
-					<p><a href="#">John Doe</a> attached an image to a blog post.</p>
+			<div class="content">
+				<div class="pie graph-area">
+				
 				</div>
-				<div class="tl-post">
-					<span class="icon">&#59172;</span>
-					<p><a href="#">John Doe</a> added his location.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59170;</span>
-					<p><a href="#">John Doe</a> edited his profile.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#9993;</span>
-					<p><a href="#">John Doe</a> has sent you  private message.</p>
-				</div>
-				<div class="pie graph-area"></div>
 			</div>
 		</section>
-		
 	</div>
 </section>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
