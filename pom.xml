@@ -124,14 +124,11 @@
             <artifactId>slf4j-log4j12</artifactId>    
             <version>${slf4j.version}</version>    
         </dependency>    
-        <!-- log end -->    
-        <!-- 映入JSON -->    
         <dependency>    
             <groupId>org.codehaus.jackson</groupId>    
             <artifactId>jackson-mapper-asl</artifactId>    
             <version>1.9.13</version>    
         </dependency>    
-        <!-- 上传组件包 -->    
         <dependency>    
             <groupId>commons-fileupload</groupId>    
             <artifactId>commons-fileupload</artifactId>    
@@ -147,6 +144,28 @@
             <artifactId>commons-codec</artifactId>    
             <version>1.9</version>    
         </dependency>  
+        
+		<dependency>
+    		<groupId>com.mchange</groupId>
+    		<artifactId>c3p0</artifactId>
+   		 	<version>0.9.5.2</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-validator</artifactId>
+    		<version>4.3.0.Final</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.jboss.logging</groupId>
+    		<artifactId>jboss-logging</artifactId>
+    		<version>3.1.0.CR2</version>
+		</dependency>
+		<dependency>
+   		 	<groupId>javax.validation</groupId>
+    		<artifactId>validation-api</artifactId>
+    		<version>1.0.0.GA</version>
+		</dependency>
+
   </dependencies>  
   <build>
     <finalName>projetPAM</finalName>
