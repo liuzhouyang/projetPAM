@@ -2,22 +2,23 @@ package com.pam.beans;
 
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 public class Utilisateur {
 	private Integer idUtilisateur;
-	@NotNull(message="nom vide")
+	@NotEmpty(message="nom vide")
 	@Size(min=3, max=15, message="longeur de nom doit entre {min}-{max}")
 	@Pattern(regexp="^[a-zA-Zàâäéèêëçùûüôö]+[-']?[a-zA-Zàâäéèêëçùûüôö]*$", message="invalid nom format")
 	private String nom;
-	@NotNull(message="prenom vide")
+	@NotEmpty(message="prenom vide")
 	@Size(min=3, max=15, message="longeur de prenom doit entre {min}-{max}")
 	@Pattern(regexp="^[a-zA-Zàâäéèêëçùûüôö]+[-']?[a-zA-Zàâäéèêëçùûüôö]*$", message="invalid prenom format")
 	private String prenom;
-	@NotNull(message="email vide")
+	@NotEmpty(message="email vide")
 	@Pattern(regexp="^[A-Za-z0-9.]+@[A-Za-z0-9]+\\.[a-zA-Z0-9]+$", message="invalid email format")
 	private String email;
-	@NotNull(message="password vide")
+	@NotEmpty(message="password vide")
 	@Size(min=4, max=10, message="longeur de password doit entre {min}-{max}")
 	@Pattern(regexp="^[A-Za-z0-9]+$", message="invalid email format : seulement numero et lettre")
 	private String password;

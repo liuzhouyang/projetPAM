@@ -65,19 +65,27 @@ public class UtilisateurController {
 	}
 	
 	@RequestMapping("login.do")
-	public ModelAndView doLogin(String email, String password, HttpSession session) {
+	public String doLogin(String email, String password, HttpSession session) {
 		//email error
 		Utilisateur utilisateur = service.getUtilisateur(email);
 		if(utilisateur == null) {
-			return new ModelAndView("/loginError.jsp");
+			return "/loginError.jsp";
 		} 
 		//password error
 		if(!password.equals(utilisateur.getPassword())) {
-			return new ModelAndView("/loginError.jsp");
+			return "/loginError.jsp";
 		}
 		//login avec succes
-		session.setAttribute("usermail", email);		
-		return new ModelAndView("/dashboard.jsp");
+		session.setAttribute("userid", utilisateur.getIdUtilisateur());		
+		return "/dashboard.jsp";
+	}
+	
+	@RequestMapping("logout.do")
+	public String doLogout(HttpSession session) {
+		//remove session
+		session.removeAttribute("userid");
+		
+		return "/index.jsp";
 	}
 
 }

@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="">
 <head>
 	<meta charset="utf-8">
-	<title>Retina Dashboard</title>
+	<title>Carrot ERP</title>
 	<base href="<%=basePath%>">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -21,8 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 <div class="testing">
 <header class="main">
-	<h1><strong>Retina</strong> Dashboard</h1>
-	<input type="text" value="search" />
+	<h1><strong>Carrot</strong> ERP</h1>
 </header>
 <section class="user">
 	<div class="profile-img">
@@ -31,40 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="buttons">
 		<button class="ico-font">&#9206;</button>
 		<span class="button dropdown">
-			<a href="#">Notifications <span class="pip">4</span></a>
-			<ul class="notice">
-				<li>
-					<hgroup>
-						<h1>You have a new task</h1>
-						<h2>Report web statistics week by week.</h2> 
-					</hgroup>
-					<p><span>14:24</span></p>
-				</li>
-				<li>
-					<hgroup>
-						<h1>New comment</h1>
-						<h2>Comment on <em>About page</em> by Darren.</h2> 
-					</hgroup>
-					<p><span>11:04</span></p>
-				</li>
-				<li>
-					<hgroup>
-						<h1>Broken link</h1>
-						<h2>We've spotted a broken link on the <em>Blog page</em>.</h2> 
-					</hgroup>
-					<p><span>10:46</span></p>
-				</li>
-				<li>
-					<hgroup>
-						<h1>User report</h1>
-						<h2><em>Lee Grant</em> has been promoted to admin.</h2> 
-					</hgroup>
-					<p><span>09:57</span></p>
-				</li>
-			</ul>
-		</span> 
-		<span class="button dropdown">
-			<a href="#">Inbox <span class="pip">6</span></a>
+			<a href="#">Mail <span class="pip">6</span></a>
 			<ul class="notice">
 				<li>
 					<hgroup>
@@ -92,24 +58,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 			</ul>
 		</span> 
-		<span class="button">Live</span>
-		<span class="button">Help</span>
-		<span class="button blue"><a href="index.html">Logout</a></span>
+		<span class="button">Profil</span>
+		<span class="button blue"><a href="user/logout.do">Logout</a></span>
 	</div>
 </section>
 </div>
 <nav>
 	<ul>
-		<li class="section"><a href="index.html"><span class="icon">&#128711;</span> Dashboard</a></li>
+		<li class="section"><a href="index.html"><span class="icon">&#128711;</span> Commandes</a></li>
 		<li>
-			<a href="pages-table.html"><span class="icon">&#128196;</span> Pages</a>
+			<a href="pages-table.html"><span class="icon">&#128196;</span> Produits </a>
 			<ul class="submenu">
-				<li><a href="page-new.html">Create page</a></li>
-				<li><a href="page-timeline.html">View pages</a></li>
+				<li><a href="page-new.html">Créer un produit</a></li>
+				<li><a href="page-timeline.html">Créer des produits par fichier</a></li>
 			</ul>	
 		</li>
 		<li>
-			<a href="files.html"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
+			<a href="files.html"><span class="icon">&#127748;</span> Statistique <span class="pip">7</span></a>
 			<ul class="submenu">
 				<li><a href="files-upload.html">Upload file</a></li>
 				<li><a href="files.html">View files</a></li>
