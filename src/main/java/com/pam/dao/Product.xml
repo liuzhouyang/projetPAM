@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pam.dao.IProductDAO">
+	<insert id="add" parameterType="Product">
+		insert into Product(title, marque, categorie, poid, couleur, taille, description, utilisateur_idUtilisateur) values(#{title}, #{marque}, #{categorie}, #{poid}, #{couleur}, #{taille}, #{description}, #{utilisateur_idUtilisateur})
+	</insert>
+	<delete id="delete" parameterType="Product">
+		delete from Product where idProduct=#{idProduct}
+	</delete>
+	<select id="get" parameterType="_int" resultType="Product">
+		select * from Product where idProduct=#{idProduct}
+	</select>
+	<update id="update" parameterType="Product">
+		update Product set title=#{title}, marque=#{marque}, categorie=#{categorie}, poid=#{poid}, couleur=#{couleur}, taille=#{taille}, description=#{description}, utilisateur_idUtilisateur=#{utilisateur_idUtilisateur} where idProduct=#{idProduct}
+	</update>
+	<select id="listAll" resultType="Product">
+		select * from Product
+	</select>
+	<select id="listByIdUtilisateur" parameterType="_int" resultType="Product">
+		select * from Product where utilisateur_idUtilisateur=#{utilisateur_idUtilisateur}
+	</select>
+</mapper>
