@@ -63,6 +63,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Commande` (
   `idCommande` INT NOT NULL AUTO_INCREMENT,
+  `nom_site` VARCHAR(45) NOT NULL,
   `date_commande` DATETIME NOT NULL,
   `date_payer` DATETIME NULL,
   `date_livraison` DATETIME NULL,
