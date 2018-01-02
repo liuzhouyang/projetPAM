@@ -1,33 +1,17 @@
 package com.pam.beans;
 
-import javax.validation.constraints.NotEmpty;
-
-import javax.validation.constraints.Size;
-
 import org.springframework.web.multipart.MultipartFile;
 
 public class Product {
 	private Integer idProduct;
-	@NotEmpty(message="titre de produit ne peut pas etre null")
-	@Size(min=1, max=45, message="longeur de titre doit entre {min}-{max}")
 	private String title;
-	@NotEmpty(message="marque de produit ne peut pas etre null")
-	@Size(min=1, max=45, message="longeur de marque doit entre {min}-{max}")
 	private String marque;
-	@NotEmpty(message="categorie de produit ne peut pas etre null")
-	@Size(min=1, max=45, message="longeur de categorie doit entre {min}-{max}")
 	private String categorie;
-	@NotEmpty(message="poid de produit ne peut pas etre null")
 	private double poid;
-	@NotEmpty(message="prix de produit ne peut pas etre null")
 	private double prix;
 	private String couleur;
 	private String taille;
-	@NotEmpty(message="descirption de produit ne peut pas etre null")
-	@Size(min=1, max=1000, message="longeur de descirption doit entre {min}-{max}")
 	private String description;
-	@NotEmpty(message="image de produit ne peut pas etre null")
-	@Size(min=1, max=1000, message="longeur de image doit entre {min}-{max}")
 	private String image;
 	private int Utilisateur_idUtilisateur;
 	

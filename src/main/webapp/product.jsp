@@ -38,6 +38,8 @@
 						<th>Categorie</th>
 						<th>Picture</th>
 						<th>Prix</th>
+						<th></th>
+						<th></th>
 					</tr>
 				</thead>
 					<tbody>
@@ -53,17 +55,14 @@
 								</c:if> --%>
 							</td>
 							<td>${p.prix}</td>
-<%-- 							<td><a href="admin_productImage_list?product.id=${p.id}"><span
-									class="glyphicon glyphicon-picture"></span></a></td>
-							<td><a href="admin_propertyValue_edit?product.id=${p.id}"><span
-									class="glyphicon glyphicon-th-list"></span></a></td>
-							
-							<td><a href="admin_product_edit?product.id=${p.id}"><span
-									class="glyphicon glyphicon-edit"></span></a></td>
-							<td><a deleteLink="true"
-								href="delete?product.id=${p.id}"><span
-									class=" 	glyphicon glyphicon-trash"></span></a></td> --%>
-	
+							<td><form method="get" action='product/detailproduct.do'>
+									<button class="green">modif</button>
+									<input type="hidden" name="id" value='${p.idProduct}'>
+								</form></td>
+							<td><form method="get" action='product/deleteproduct.do'>
+									<button class="red">delete</button>
+									<input type="hidden" name="id" value='${p.idProduct}'>
+							</form></td>
 						</tr>
 					</c:forEach>
 					</tbody>

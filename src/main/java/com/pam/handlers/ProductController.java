@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
 
 import com.pam.beans.Product;
 import com.pam.service.IProductService;
@@ -98,6 +99,34 @@ public class ProductController {
 		List<Product> list = productService.list();
 		mav.addObject("list",list);
 		mav.setViewName("/product.jsp");
+		return mav;
+	}
+	
+	@RequestMapping("deleteproduct.do")
+	public ModelAndView deleteProduct(Integer id) {
+		ModelAndView mav = new ModelAndView();
+		productService.delete(id);
+		mav.setViewName("/product/listproduct.do");
+		return mav;
+	}
+	
+	@RequestMapping("detailproduct.do")
+	public String detailProduct(Model model,Integer id) {
+		Product product = productService.get(id);
+		model.addAttribute("product",product);
+		return "/modifProduct.jsp";
+	}
+	
+	@RequestMapping("modifProduct.do")
+	public ModelAndView modifProduct(Product p, int id) {
+		ModelAndView mav = new ModelAndView();
+		Product product = productService.get(id);
+		String fileName = p.getTitle() + p.getCategorie() + ".jpg";
+		p.setImage(fileName);
+		p.setUtilisateur_idUtilisateur(product.getUtilisateur_idUtilisateur());
+		productService.update(p);
+		
+		mav.setViewName("/product/listproduct.do");
 		return mav;
 	}
 }
