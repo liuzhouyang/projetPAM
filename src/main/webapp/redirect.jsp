@@ -3,7 +3,8 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!DOCTYPE HTML>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -11,8 +12,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 	<body>
    	 <script>
-		alert("email ou password error");
-		window.location ="index.jsp";
+   		var info = '<%=request.getAttribute("info")%>' ;
+   		alert(info);
+		//alert("Inscription avec succes");
+		window.location ="index.jsp"
  	 </script> 
   </body>
 </html>

@@ -60,24 +60,31 @@ public class UtilisateurController {
 		//add user
 		utilisateur.setRol("user");
 		service.addUtilisateur(utilisateur);
-		mv.setViewName("/inscriptionSuccess.jsp");
+		mv.addObject("info", "Inscription avec succes");
+		mv.setViewName("/redirect.jsp");
 		return mv;
 	}
 	
 	@RequestMapping("login.do")
-	public String doLogin(String email, String password, HttpSession session) {
+	public ModelAndView doLogin(String email, String password, HttpSession session) {
+		ModelAndView mv = new ModelAndView();
 		//email error
 		Utilisateur utilisateur = service.getUtilisateur(email);
 		if(utilisateur == null) {
-			return "/loginError.jsp";
+			mv.addObject("info", "Email error");
+			mv.setViewName("/redirect.jsp");
+			return mv;
 		} 
 		//password error
 		if(!password.equals(utilisateur.getPassword())) {
-			return "/loginError.jsp";
+			mv.addObject("info", "Password error");
+			mv.setViewName("/redirect.jsp");
+			return mv;
 		}
 		//login avec succes
-		session.setAttribute("userid", utilisateur.getIdUtilisateur());		
-		return "/dashboard.jsp";
+		session.setAttribute("userid", utilisateur.getIdUtilisateur());	
+		mv.setViewName("/dashboard.jsp");
+		return mv;
 	}
 	
 	@RequestMapping("logout.do")
