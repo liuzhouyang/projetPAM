@@ -30,7 +30,7 @@ $(function(){
 		    return false;
 		} else {
 			var testPoid = new Number("poid");
-			if (testPoid = "NaN"){
+			if (testPoid == "NaN"){
 				alert("Le poid de produit est un nombre");
 				return false;
 			}
@@ -40,7 +40,7 @@ $(function(){
 		    return false;
 		} else {
 			var testPrix = new Number("prix");
-			if (testPrix = "NaN"){
+			if (testPrix == "NaN"){
 				alert("Le prix de produit est un nombre");
 				return false;
 			}

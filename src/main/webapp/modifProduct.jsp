@@ -6,7 +6,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
-
+	$("editForm").submit(function(){
+		var poid = document.getElementById("poid").value;
+		var prix = document.getElementById("prix").value;
+		var testPoid = new Number("poid");
+		if (testPoid == "NaN"){
+			alert("Le poid de produit est un nombre");
+			return false;
+		}
+		var testPrix = new Number("prix");
+		if (testPrix == "NaN"){
+			alert("Le prix de produit est un nombre");
+			return false;
+		}
+	});
 	$('#cancel').click(function(e){ 
 		top.location="/projetPAM/product/listproduct.do";
 		return false;
@@ -22,9 +35,7 @@ $(function(){
 			</hgroup>
 		</header>
 		<div class="content">
-		<form action="product/test.do" method="post" enctype="multipart/form-data" >
-			<input type="hidden" name="id" value='${product.idProduct}'>
-<%-- 			<input type="text" id="idProduct" name="idProduct" value="${product.idProduct}" disabled="disabled"/> --%>
+		<form id="editForm" action="product/modifProduct.do" method="post" enctype="multipart/form-data" >
 	  		<input type="text" id="title" name="title" value="${product.title}">
     		<input type="text" id="marque" name="marque" value="${product.marque}">
     		<input type="text" id="categorie" name="categorie" value="${product.categorie}">
@@ -34,7 +45,16 @@ $(function(){
     		<input type="text" name="taille" value="${product.taille}">
       		<textarea id="description" name="description"/>${product.description}</textarea>
      		<input type="file" id="image" name="img"/>
-			<button class="blue">edit</button><button id="cancel" class="red">cancel</button>
+     		<table>
+     			<tr>
+     				<td colspan="3">
+     				<input type="hidden" name="idProduct" value="${product.idProduct}"/>
+     					<button type="submit" class="blue">edit</button>
+     					<button id="cancel" class="red">cancel</button>
+     				</td>
+     			</tr>
+     		</table>
+			<!-- <button class="blue">edit</button><button id="cancel" class="red">cancel</button> -->
 		</form>
 		</div>
 	</section>

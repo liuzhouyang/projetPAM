@@ -118,13 +118,13 @@ public class ProductController {
 	}
 	
 	@RequestMapping("modifProduct.do")
-	public ModelAndView modifProduct(Product p, int id) {
+	public ModelAndView modifProduct(Product product) {
 		ModelAndView mav = new ModelAndView();
-		Product product = productService.get(id);
-		String fileName = p.getTitle() + p.getCategorie() + ".jpg";
-		p.setImage(fileName);
-		p.setUtilisateur_idUtilisateur(product.getUtilisateur_idUtilisateur());
-		productService.update(p);
+		//Product product = productService.get(id);
+		//String fileName = p.getTitle() + p.getCategorie() + ".jpg";
+		//p.setImage(fileName);
+	//	p.setUtilisateur_idUtilisateur(product.getUtilisateur_idUtilisateur());
+	//	productService.update(product);
 		
 		mav.setViewName("/product/listproduct.do");
 		return mav;
