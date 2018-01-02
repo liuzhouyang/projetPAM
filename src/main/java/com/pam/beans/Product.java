@@ -1,25 +1,21 @@
 package com.pam.beans;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
+
 import javax.validation.constraints.Size;
 
 import org.springframework.web.multipart.MultipartFile;
 
 public class Product {
-	
 	private Integer idProduct;
 	@NotEmpty(message="titre de produit ne peut pas etre null")
 	@Size(min=1, max=45, message="longeur de titre doit entre {min}-{max}")
-	@Pattern(regexp="^[a-zA-Zàâäéèêëçùûüôö]+[-']?[a-zA-Zàâäéèêëçùûüôö]*$", message="invalid nom format")
 	private String title;
 	@NotEmpty(message="marque de produit ne peut pas etre null")
 	@Size(min=1, max=45, message="longeur de marque doit entre {min}-{max}")
-	@Pattern(regexp="^[a-zA-Zàâäéèêëçùûüôö]+[-']?[a-zA-Zàâäéèêëçùûüôö]*$", message="invalid nom format")
 	private String marque;
 	@NotEmpty(message="categorie de produit ne peut pas etre null")
 	@Size(min=1, max=45, message="longeur de categorie doit entre {min}-{max}")
-	@Pattern(regexp="^[a-zA-Zàâäéèêëçùûüôö]+[-']?[a-zA-Zàâäéèêëçùûüôö]*$", message="invalid nom format")
 	private String categorie;
 	@NotEmpty(message="poid de produit ne peut pas etre null")
 	private double poid;
@@ -29,21 +25,19 @@ public class Product {
 	private String taille;
 	@NotEmpty(message="descirption de produit ne peut pas etre null")
 	@Size(min=1, max=1000, message="longeur de descirption doit entre {min}-{max}")
-	@Pattern(regexp="^[a-zA-Zàâäéèêëçùûüôö]+[-']?[a-zA-Zàâäéèêëçùûüôö]*$", message="invalid nom format")
 	private String description;
 	@NotEmpty(message="image de produit ne peut pas etre null")
 	@Size(min=1, max=1000, message="longeur de image doit entre {min}-{max}")
-	@Pattern(regexp="^[a-zA-Zàâäéèêëçùûüôö]+[-']?[a-zA-Zàâäéèêëçùûüôö]*$", message="invalid nom format")
 	private String image;
 	private int Utilisateur_idUtilisateur;
 	
 	private MultipartFile img;
 	
-/*	public Product() {
+	public Product() {
 		super();
 	}
 	
-	public Product(String title, String marque, String categorie, double poid, double prix, String couleur, String taille, String description, MultipartFile img, String image) {
+	public Product(String title, String marque, String categorie, double poid, double prix, String couleur, String taille, String description, MultipartFile img, String image, int Utilisateur_idUtilisateur) {
 		super();
 		this.title = title;
 		this.marque = marque;
@@ -55,8 +49,8 @@ public class Product {
 		this.description = description;
 		this.img = img;
 		this.image = image;
+		this.Utilisateur_idUtilisateur = Utilisateur_idUtilisateur;
 	}
-	*/
 	public Integer getIdProduct() {
 		return idProduct;
 	}

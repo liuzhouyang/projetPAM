@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.pam.beans.Product;
 import com.pam.service.IProductService;
+import com.pam.service.IUtilisateurService;
 import com.pam.utils.ImageUtil;
 
 @Controller
@@ -23,19 +24,54 @@ public class ProductController {
 	@Autowired
 	@Qualifier("productService")
 	IProductService productService;
+	
+	@Autowired
+	@Qualifier("utilisateurService")
+	private IUtilisateurService service;
 
-	@RequestMapping("addProduct.do")
+	@RequestMapping("addproduct.do")
 	public ModelAndView addProduct(Product p, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		int id=1;
-		/*List<ObjectError> errors = br.getAllErrors();
+		int id = 1;
+//		int id = (int)session.getAttribute("userid");
+	/*	List<ObjectError> errors = br.getAllErrors();
 		if(errors.size() > 0) {
 			FieldError titleError = br.getFieldError("title");
 			FieldError marqueError = br.getFieldError("marque");
 			FieldError categorieError = br.getFieldError("categorie");
-			FieldError pwError = br.getFieldError("password");
+			FieldError poidError = br.getFieldError("poid");
+			FieldError prixError = br.getFieldError("prix");
+			FieldError descriptionError = br.getFieldError("description");
+			FieldError imageError = br.getFieldError("img");
+			
+			if(titleError != null) {
+				mav.addObject("nomError", titleError.getDefaultMessage());
+			}
+			if(marqueError != null) {
+				mav.addObject("prenomError", marqueError.getDefaultMessage());
+			}
+			if(categorieError != null) {
+				mav.addObject("pwError", categorieError.getDefaultMessage());
+			}
+			if(poidError != null) {
+				mav.addObject("pwError", poidError.getDefaultMessage());
+			}
+			if(prixError != null) {
+				mav.addObject("pwError", prixError.getDefaultMessage());
+			}
+			if(descriptionError != null) {
+				mav.addObject("pwError", descriptionError.getDefaultMessage());
+			}
+			if(imageError != null) {
+				mav.addObject("pwError", imageError.getDefaultMessage());
+			}
+			mav.setViewName("/addProduct.jsp");
+			return mav;
 		}*/
-		String fileName = p.getIdProduct() + ".jpg";
+		String fileName = p.getTitle() + p.getCategorie() + ".jpg";
+		p.setImage(fileName);
+		p.setUtilisateur_idUtilisateur(id);
+		productService.add(p);
 		String imageFolder = session.getServletContext().getRealPath("img/origine");
 		String imageFolderSmall = session.getServletContext().getRealPath("img/small");
 		File file = new File(imageFolder,fileName);
@@ -50,10 +86,7 @@ public class ProductController {
 			e.printStackTrace();
 			// TODO: handle exception
 		}
-		p.setImage(fileName);
-		p.setUtilisateur_idUtilisateur(id);
-		productService.add(p);
-		mav.setViewName("/product.jsp");
+		mav.setViewName("/product/listproduct.do");
 		return mav;
 	}
 	
