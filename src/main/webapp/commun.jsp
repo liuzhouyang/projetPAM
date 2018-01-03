@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</header>
 	<section class="user">
 		<div class="profile-img">
-			<p><img src="images/uiface2.png" alt="" height="40" width="40" /> Welcome back John Doe</p>
+			<p><img src="images/carrot.png" alt="" height="40" width="40" /> Welcome back <%= session.getAttribute("username") %></p>
 		</div>
 		<div class="buttons">
 			<button class="ico-font">&#9206;</button>
