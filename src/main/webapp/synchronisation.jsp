@@ -22,40 +22,6 @@
 			<input type="file" name="fichier"/><br>
 			<input type="submit" value="Synchroniser commandes" class="green" style="width:220px; color:white; margin:5px 10px 10px 10px;" />
 		</form>
-		<div class="content no-padding timeline">
-			<div class="tl-post">
-				<span class="icon">&#59185;</span>
-				<p>blog page. <span class="time">Created 1 hour ago</span></p>
-			</div>
-			<div class="tl-post">
-				<span class="icon">&#59185;</span>
-				<p>blog page. <span class="time">Created 2 hours ago</span></p>
-			</div>
-			<div class="tl-post">
-				<span class="icon">&#59185;</span>
-				<p>blog page. <span class="time">Created 9 hours ago</span></p>
-			</div>
-			<div class="tl-post">
-				<span class="icon">&#59185;</span>
-				<p>blog page. <span class="time">Created 1 days ago</span></p>
-			</div>
-			<div class="tl-post">
-				<span class="icon">&#59185;</span>
-				<p> blog page. <span class="time">Created 1 days ago</span></p>
-			</div>
-			<div class="tl-post">
-				<span class="icon">&#9881;</span>
-				<p>service page. <span class="time">Created 2 days</span></p>
-			</div>
-			<div class="tl-post">
-				<span class="icon">&#9881;</span>
-				<p>service page. <span class="time">Created 2 days ago</span></p>
-			</div>
-			<div class="tl-post">
-				<span class="icon">&#9881;</span>
-				<p>service page. <span class="time">Created 2 days ago</span></p>
-			</div>
-		</div>
 	</section>
 </section>
 <%@ include file="footer.jsp" %>

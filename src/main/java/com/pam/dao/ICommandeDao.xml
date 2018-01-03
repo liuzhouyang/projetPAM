@@ -25,7 +25,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			   values(#{idCommande}, #{idUtilisateur}, #{idProduit}, #{quantite})
 	</insert>
 	
+	<insert id="insertHistoriqueCommande">
+		insert into historiquecommande(idUtilisateur, nomFichier, nomWeb, date) 
+			   values(#{idUtilisateur}, #{nomFichier}, #{nomWeb}, #{date})
+	</insert>
+	
 	<select id="selectAllCommandes" resultType="Commande">
 		select * from commande where Utilisateur_idUtilisateur = #{xxx}
+	</select>
+	
+	<select id="selectCommandesHistorique" resultType="CommandeHistorique">
+		select * from historiquecommande where idUtilisateur = #{xxx}
 	</select>
 </mapper>

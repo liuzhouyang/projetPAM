@@ -2,6 +2,7 @@ package com.pam.handlers;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,7 +25,9 @@ import org.xml.sax.SAXException;
 
 import com.pam.beans.Commande;
 import com.pam.beans.CommandeDetail;
+import com.pam.beans.CommandeHistorique;
 import com.pam.service.ICommandeService;
+import com.pam.utils.DateUtil;
 
 @Controller
 @RequestMapping("/commande")
@@ -53,6 +56,7 @@ public class CommandeController {
 				File file = new File(path, fileName);
 				fichier.transferTo(file);
 				mv.addObject("filePath", path+"\\"+fileName);
+				mv.addObject("fileName", fileName);
 				mv.setViewName("redirect:traiterXML.do");
 				return mv;
 			} else {
@@ -67,9 +71,10 @@ public class CommandeController {
 	}
 	
 	@RequestMapping("traiterXML.do")
-	public ModelAndView doTraiterXML(String filePath, HttpSession session) throws ParserConfigurationException, SAXException, IOException  {
+	public ModelAndView doTraiterXML(String filePath, String fileName, HttpSession session) throws ParserConfigurationException, SAXException, IOException  {
 		ModelAndView mv = new ModelAndView();
 		Commande commande = new Commande();
+		CommandeHistorique historique = null;
 		int idUtilisateur = (int) session.getAttribute("userid");
 		commande.setUtilisateur_idUtilisateur(idUtilisateur);
 		Map<Integer, Integer> produits = new HashMap<>();
@@ -143,9 +148,20 @@ public class CommandeController {
 			}
 			produits = new HashMap<>();
 		}
+		historique = new CommandeHistorique(idUtilisateur, fileName, commande.getNom_site(), DateUtil.dateFormat(new Date()));
+		service.addCommandeHistorique(historique);
 		mv.addObject("info", "Synchronisation avec succès");
 		mv.addObject("page", "synchronisation.jsp");
 		mv.setViewName("/redirect.jsp");
+		return mv;
+	}
+	
+	@RequestMapping("historique.do")
+	public ModelAndView doHistorique(HttpSession session) {
+		int idUtilisateur = (int) session.getAttribute("userid");
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("historiques", service.selectCommandesHistorique(idUtilisateur));
+		mv.setViewName("/historique.jsp");
 		return mv;
 	}
 }

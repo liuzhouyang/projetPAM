@@ -1,7 +1,6 @@
 package com.pam.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import com.pam.beans.Utilisateur;
 

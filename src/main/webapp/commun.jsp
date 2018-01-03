@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<a href="commande/consulter.do"><span class="icon">&#128196;</span> Commandes </a>
 			<ul class="submenu">
 				<li><a href="synchronisation.jsp">Synchroniser commandes</a></li>
-				<li><a href="commandes.jsp">Consulter</a></li>
+				<li><a href="commande/historique.do">Historique</a></li>
 			</ul>	
 		</li>
 		<li>
