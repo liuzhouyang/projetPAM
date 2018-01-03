@@ -4,17 +4,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pam.dao.ICommandeDao">
 	<insert id="insertCommande">
-		insert into commande(nom_site, date_commande, date_payer, date_livraison, prix_livraison, prix_sous_total,
-					 prix_total, statut, info, nom_acheteur, add_acheteur, Utilisateur_idUtilisateur) 
-			   values(#{nom_site}, #{date_commande}, #{date_payer}, #{date_livraison}, #{prix_livraison}, 
-			   		#{prix_sous_total}, #{prix_total}, #{statut}, #{info}, #{nom_acheteur}, #{add_acheteur}, #{Utilisateur_idUtilisateur})
+		insert into commande(nom_site, date_commande, prix_livraison, 
+					 prix_total, statut, nom_acheteur, add_acheteur, Utilisateur_idUtilisateur) 
+			   values(#{nom_site}, #{date_commande}, #{prix_livraison}, 
+					 #{prix_total}, #{statut},  #{nom_acheteur}, #{add_acheteur}, #{Utilisateur_idUtilisateur})
 	</insert>
 	
 	<insert id="insertCommandeCatcheId">
-		insert into commande(nom_site, date_commande, date_payer, date_livraison, prix_livraison, prix_sous_total,
-					 prix_total, statut, info, nom_acheteur, add_acheteur, Utilisateur_idUtilisateur) 
-			   values(#{nom_site}, #{date_commande}, #{date_payer}, #{date_livraison}, #{prix_livraison}, 
-			   		#{prix_sous_total}, #{prix_total}, #{statut}, #{info}, #{nom_acheteur}, #{add_acheteur}, #{Utilisateur_idUtilisateur})
+		insert into commande(nom_site, date_commande, prix_livraison, 
+					 prix_total, statut, nom_acheteur, add_acheteur, Utilisateur_idUtilisateur) 
+			   values(#{nom_site}, #{date_commande}, #{prix_livraison}, 
+					 #{prix_total}, #{statut},  #{nom_acheteur}, #{add_acheteur}, #{Utilisateur_idUtilisateur})
 		<selectKey resultType="int" keyProperty="idCommande" order="AFTER">
 			select @@identity
 		</selectKey>
@@ -24,4 +24,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into detailCommande(Commande_idCommande, Commande_Utilisateur_idUtilisateur, Produits_idProduits, quantite) 
 			   values(#{idCommande}, #{idUtilisateur}, #{idProduit}, #{quantite})
 	</insert>
+	
+	<select id="selectAllCommandes" resultType="Commande">
+		select * from commande where Utilisateur_idUtilisateur = #{xxx}
+	</select>
 </mapper>
