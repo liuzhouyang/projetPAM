@@ -101,9 +101,9 @@ CREATE TABLE `historiquecommande` (
 -- ----------------------------
 -- Table structure for `produits`
 -- ----------------------------
-DROP TABLE IF EXISTS `produits`;
-CREATE TABLE `produits` (
-  `idProduits` int(11) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `idProduct` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) NOT NULL,
   `marque` varchar(45) NOT NULL,
   `categorie` varchar(45) NOT NULL,
@@ -113,9 +113,8 @@ CREATE TABLE `produits` (
   `taille` varchar(45) DEFAULT NULL,
   `description` varchar(1000) NOT NULL,
   `image` varchar(1000) NOT NULL,
-  `Produitscol` varchar(45) DEFAULT NULL,
   `Utilisateur_idUtilisateur` int(11) NOT NULL,
-  PRIMARY KEY (`idProduits`),
+  PRIMARY KEY (`idProduct`),
   KEY `fk_Produits_Utilisateur_idx` (`Utilisateur_idUtilisateur`),
   CONSTRAINT `fk_Produits_Utilisateur` FOREIGN KEY (`Utilisateur_idUtilisateur`) REFERENCES `utilisateur` (`idUtilisateur`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
