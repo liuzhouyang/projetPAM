@@ -66,9 +66,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<ul>
 		<li class="section"><a href="dashboard.jsp"><span class="icon">&#128711;</span> Accueil</a></li>
 		<li>
-			<a href="pages-table.jsp"><span class="icon">&#128196;</span> Commandes </a>
+			<a href="commande/consulter.do"><span class="icon">&#128196;</span> Commandes </a>
 			<ul class="submenu">
-				<li><a href="synchroniserCommandes.jsp">Synchroniser commandes</a></li>
+				<li><a href="synchronisation.jsp">Synchroniser commandes</a></li>
 				<li><a href="commandes.jsp">Consulter</a></li>
 			</ul>	
 		</li>
@@ -81,10 +81,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</ul>
 		</li>
 		<li>
-			<a href="blog-timeline.jsp"><span class="icon">&#59160;</span> Stocage <span class="pip">12</span></a>
+			<a href="blog-timeline.jsp"><span class="icon">&#59160;</span> Stockage <span class="pip">12</span></a>
 			<ul class="submenu">
 				<li><a href="blog-new.jsp">Consulter</a></li>
-				<li><a href="blog-table.jsp">Modifier le stocage</a></li>
+				<li><a href="blog-table.jsp">Modifier le stockage</a></li>
 			</ul>
 		</li>
 		<li><a href="statistics.jsp"><span class="icon">&#128202;</span> Statistique</a></li>

@@ -14,8 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	 <script>
    		var info = '<%=request.getAttribute("info")%>' ;
    		alert(info);
-		//alert("Inscription avec succes");
-		window.location ="index.jsp"
+		window.location = '<%=request.getAttribute("page")%>' ;
  	 </script> 
   </body>
 </html>

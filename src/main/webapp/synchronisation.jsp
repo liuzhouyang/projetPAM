@@ -15,10 +15,10 @@
 			<span class="icon">&#128196;</span>
 			<hgroup>
 				<h1>Synchroniser commandes</h1>
-				<h2>historique des synchronisations</h2>
+				<h2>selecter un fichier</h2>
 			</hgroup>
 		</header>
-		<form action="commande/synchroniser.do" method="POST" enctype="multipart/from-data" >
+		<form action="commande/synchroniser.do" method="POST" enctype="multipart/form-data" >
 			<input type="file" name="fichier"/><br>
 			<input type="submit" value="Synchroniser commandes" class="green" style="width:220px; color:white; margin:5px 10px 10px 10px;" />
 		</form>
