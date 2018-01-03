@@ -68,8 +68,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<li>
 			<a href="pages-table.jsp"><span class="icon">&#128196;</span> Commandes </a>
 			<ul class="submenu">
-				<li><a href="page-new.jsp">Récupérer les commandes</a></li>
-				<li><a href="page-timeline.jsp">Consulter les commandes</a></li>
+				<li><a href="synchroniserCommandes.jsp">Synchroniser commandes</a></li>
+				<li><a href="commandes.jsp">Consulter</a></li>
 			</ul>	
 		</li>
 		<li>
@@ -97,10 +97,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</li>
 	</ul>
 </nav>
-<section class="alert">
-	<div class="green">	
-		<p>Hi Lee, you have <a href="#">3 new pages</a> and <a href="#">16 comments</a> to approve, better get going!</p>
-		<span class="close">&#10006;</span>
-	</div>
-</section>
 </body>

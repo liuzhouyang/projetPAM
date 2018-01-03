@@ -194,7 +194,7 @@ header input:focus {
 }
 
 section.content {
-	margin: 75px 0 0 210px;
+	margin: 0px 0 0 210px;
 	padding: 25px;
 	
 	-webkit-box-sizing: border-box;
@@ -454,6 +454,19 @@ button.ico-font {
 }
 
 button.green {
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+	border: 1px solid #719e37;
+	margin: 0;
+	background: #9bc747; /* Old browsers */ 
+	background: -moz-linear-gradient(top, #9bc747 0%, #82bd42 100%); /* FF3.6+ */ 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9bc747), color-stop(100%,#82bd42)); /* Chrome,Safari4+ */ 
+	background: -webkit-linear-gradient(top, #9bc747 0%,#82bd42 100%); /* Chrome10+,Safari5.1+ */ 
+	background: -o-linear-gradient(top, #9bc747 0%,#82bd42 100%); /* Opera 11.10+ */ 
+	background: -ms-linear-gradient(top, #9bc747 0%,#82bd42 100%); /* IE10+ */ 
+	background: linear-gradient(to bottom, #9bc747 0%,#82bd42 100%); /* W3C */ 
+}
+
+input.green {
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 	border: 1px solid #719e37;
 	margin: 0;
