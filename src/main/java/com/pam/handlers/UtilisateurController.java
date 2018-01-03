@@ -86,6 +86,7 @@ public class UtilisateurController {
 		}
 		//login avec succes
 		session.setAttribute("userid", utilisateur.getIdUtilisateur());	
+		session.setAttribute("username", utilisateur.getPrenom());	
 		mv.setViewName("/dashboard.jsp");
 		return mv;
 	}
