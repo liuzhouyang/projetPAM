@@ -1,0 +1,37 @@
+<commandes>
+	<commande>
+		<Site>amazon</Site>
+		<Acheteur>Pierre</Acheteur>
+		<Address>10 CITE DES MONTBOUCONS</Address>
+		<Date>2017-12-20 13:05:56</Date>		
+		<Livraion>8</Livraion>
+		<Prix>50</Prix>
+		<Statut>En Transit</Statut>
+		<Produit>
+			<Id>12</Id>
+			<Quantite>2</Quantite>
+		</Produit>
+		<Produit>
+			<Id>2</Id>
+			<Quantite>2</Quantite>
+		</Produit>
+		<Produit>
+			<Id>15</Id>
+			<Quantite>1</Quantite>
+		</Produit>	
+	</commande>
+
+	<commande>
+		<Site>amazon</Site>
+		<Acheteur>Sophie</Acheteur>
+		<Address>UFC</Address>
+		<Date>2017-12-22 20:11:52</Date>		
+		<Livraion>8</Livraion>
+		<Prix>104</Prix>
+		<Statut>En Transit</Statut>
+		<Produit>
+			<Id>10</Id>
+			<Quantite>2</Quantite>
+		</Produit>
+	</commande>
+</commandes>

@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</header>
 	<section class="user">
 		<div class="profile-img">
-			<p><img src="images/uiface2.png" alt="" height="40" width="40" /> Welcome back John Doe</p>
+			<p><img src="images/carrot.png" alt="" height="40" width="40" /> Welcome back <%= session.getAttribute("username") %></p>
 		</div>
 		<div class="buttons">
 			<button class="ico-font">&#9206;</button>
@@ -66,10 +66,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<ul>
 		<li class="section"><a href="dashboard.jsp"><span class="icon">&#128711;</span> Accueil</a></li>
 		<li>
-			<a href="pages-table.jsp"><span class="icon">&#128196;</span> Commandes </a>
+			<a href="commande/consulter.do"><span class="icon">&#128196;</span> Commandes </a>
 			<ul class="submenu">
-				<li><a href="synchroniserCommandes.jsp">Synchroniser commandes</a></li>
-				<li><a href="commandes.jsp">Consulter</a></li>
+				<li><a href="synchronisation.jsp">Synchroniser commandes</a></li>
+				<li><a href="commande/historique.do">Historique</a></li>
 			</ul>	
 		</li>
 		<li>
@@ -81,10 +81,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</ul>
 		</li>
 		<li>
-			<a href="blog-timeline.jsp"><span class="icon">&#59160;</span> Stocage <span class="pip">12</span></a>
+			<a href="blog-timeline.jsp"><span class="icon">&#59160;</span> Stockage <span class="pip">12</span></a>
 			<ul class="submenu">
 				<li><a href="blog-new.jsp">Consulter</a></li>
-				<li><a href="blog-table.jsp">Modifier le stocage</a></li>
+				<li><a href="blog-table.jsp">Modifier le stockage</a></li>
 			</ul>
 		</li>
 		<li><a href="statistics.jsp"><span class="icon">&#128202;</span> Statistique</a></li>

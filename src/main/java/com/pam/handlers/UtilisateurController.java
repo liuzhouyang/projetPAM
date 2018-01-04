@@ -61,6 +61,7 @@ public class UtilisateurController {
 		utilisateur.setRol("user");
 		service.addUtilisateur(utilisateur);
 		mv.addObject("info", "Inscription avec succes");
+		mv.addObject("page", "index.jsp");
 		mv.setViewName("/redirect.jsp");
 		return mv;
 	}
@@ -72,17 +73,20 @@ public class UtilisateurController {
 		Utilisateur utilisateur = service.getUtilisateur(email);
 		if(utilisateur == null) {
 			mv.addObject("info", "Email error");
+			mv.addObject("page", "index.jsp");
 			mv.setViewName("/redirect.jsp");
 			return mv;
 		} 
 		//password error
 		if(!password.equals(utilisateur.getPassword())) {
 			mv.addObject("info", "Password error");
+			mv.addObject("page", "index.jsp");
 			mv.setViewName("/redirect.jsp");
 			return mv;
 		}
 		//login avec succes
 		session.setAttribute("userid", utilisateur.getIdUtilisateur());	
+		session.setAttribute("username", utilisateur.getPrenom());	
 		mv.setViewName("/dashboard.jsp");
 		return mv;
 	}

@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Consulter commandes</title>
+	<title>Historique commandes</title>
 </head>
 <body>
 <section class="content">
@@ -13,8 +13,7 @@
 		<header>
 			<span class="icon">&#59160;</span>
 			<hgroup>
-				<h1>Commandes</h1>
-				<h2>CMS blog pages</h2>
+				<h1>Historique commandes</h1>
 			</hgroup>
 		</header>
 		<div class="content">
@@ -23,21 +22,15 @@
 					<tr>
 						<th>Site</th>
 						<th>Date</th>
-						<th>PrixLivraison</th>
-						<th>PrixTotal</th>
-						<th>Statut</th>
-						<th>Acheteur</th>
+						<th>Fichier</th>
 					</tr>
 				</thead>
 					<tbody>
-						<c:forEach var="commande" items="${commandes}">
+						<c:forEach var="historique" items="${historiques}">
 							<tr>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${commande.nom_site}</td>
-								<td>${commande.date_commande}</td>
-								<td>${commande.prix_livraison}</td>
-								<td>${commande.prix_total}</td>
-								<td>${commande.statut}</td>
-								<td>${commande.nom_acheteur}<br/>${commande.add_acheteur}</td>
+								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${historique.nomWeb}</td>
+								<td>${historique.date}</td>
+								<td>${historique.nomFichier}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
