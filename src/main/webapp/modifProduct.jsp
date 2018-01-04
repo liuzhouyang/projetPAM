@@ -6,23 +6,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$("editForm").submit(function(){
+	$('.content button').click(function(){
 		var poid = document.getElementById("poid").value;
 		var prix = document.getElementById("prix").value;
-		var testPoid = new Number("poid");
-		if (testPoid == "NaN"){
-			alert("Le poid de produit est un nombre");
+		var image = document.getElementById("image").value;
+		var testPoid = new Number(poid);
+		if (isNaN(testPoid)){
+			alert("Le poid de produit doit etre un nombre");
 			return false;
 		}
-		var testPrix = new Number("prix");
-		if (testPrix == "NaN"){
-			alert("Le prix de produit est un nombre");
+		var testPrix = new Number(prix);
+		if (isNaN(testPrix)){
+			alert("Le prix de produit doit etre un nombre");
 			return false;
 		}
-	});
-	$('#cancel').click(function(e){ 
-		top.location="/projetPAM/product/listproduct.do";
-		return false;
+		if(image != ""){
+			var length = image.length;
+			var last = image.substring(length-3,length).toUpperCase();
+	    	if (last != "JPG" || last != "GIF" || last != "PNG") {
+	    		alert("Not a image!");
+	    		return false;
+	    	}
+		}
 	});
 });
 </script>
@@ -35,7 +40,7 @@ $(function(){
 			</hgroup>
 		</header>
 		<div class="content">
-		<form id="editForm" action="product/modifProduct.do" method="post" enctype="multipart/form-data" >
+		<form id="editForm" action="product/modifProduct.do" method="post" >
 	  		<input type="text" id="title" name="title" value="${product.title}">
     		<input type="text" id="marque" name="marque" value="${product.marque}">
     		<input type="text" id="categorie" name="categorie" value="${product.categorie}">
@@ -44,22 +49,18 @@ $(function(){
     		<input type="text" id="couleur"name="couleur" value="${product.couleur}">
     		<input type="text" name="taille" value="${product.taille}">
       		<textarea id="description" name="description"/>${product.description}</textarea>
-     		<input type="file" id="image" name="img"/>
+      		<input type="file" id="image" name="img"/>
      		<table>
      			<tr>
      				<td colspan="3">
      				<input type="hidden" name="idProduct" value="${product.idProduct}"/>
-     					<button type="submit" class="blue">edit</button>
-     					<button id="cancel" class="red">cancel</button>
+     				<input type="hidden" name="image" value="${product.image}"/>
+     					<button class="blue">edit</button>
      				</td>
      			</tr>
      		</table>
-			<!-- <button class="blue">edit</button><button id="cancel" class="red">cancel</button> -->
 		</form>
 		</div>
 	</section>
 </section>
-<script>
-
-</script>
 <%@include file="footer.jsp"%>

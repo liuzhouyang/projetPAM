@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from Product where idProduct=#{idProduct}
 	</select>
 	<update id="update" parameterType="Product">
-		update Product set title=#{title}, marque=#{marque}, categorie=#{categorie}, poid=#{poid}, prix=#{prix} couleur=#{couleur}, taille=#{taille}, description=#{description}, image=#{image}, utilisateur_idUtilisateur=#{utilisateur_idUtilisateur} where idProduct=#{idProduct}
+		update Product set title=#{title}, marque=#{marque}, categorie=#{categorie}, poid=#{poid}, prix=#{prix}, couleur=#{couleur}, taille=#{taille}, description=#{description}, image=#{image}, utilisateur_idUtilisateur=#{utilisateur_idUtilisateur} where idProduct=#{idProduct}
 	</update>
 	<select id="listAll" resultType="Product">
 		select * from Product

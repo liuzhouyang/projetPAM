@@ -2,10 +2,10 @@
 
 <%@include file="commun.jsp"%>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
 <script type="text/javascript">
 $(function(){
-	$('.content button').click(function(e){ 
+	$('.content button').click(function(){ 
 		var title = document.getElementById("title").value;
 		var marque = document.getElementById("marque").value;
 		var categorie = document.getElementById("categorie").value;
@@ -29,8 +29,8 @@ $(function(){
 		    alert("Le poid de produit ne peut pas etre null");
 		    return false;
 		} else {
-			var testPoid = new Number("poid");
-			if (testPoid == "NaN"){
+			var testPoid = new Number(poid);
+			if (isNaN(testPoid)){
 				alert("Le poid de produit est un nombre");
 				return false;
 			}
@@ -39,8 +39,8 @@ $(function(){
 		    alert("Le prix de produit ne peut pas etre null");
 		    return false;
 		} else {
-			var testPrix = new Number("prix");
-			if (testPrix == "NaN"){
+			var testPrix = new Number(prix);
+			if (isNaN(testPrix)){
 				alert("Le prix de produit est un nombre");
 				return false;
 			}
@@ -52,8 +52,14 @@ $(function(){
 		if(image == ""){
 		    alert("L'image de produit ne peut pas etre null");
 		    return false;
+		} else {
+			var length = image.length;
+			var last = image.substring(length-3,length).toUpperCase();
+	    	if (last != "JPG" || last != "GIF" || last != "PNG") {
+	    		alert("Not a image!");
+	    		return false;
+	    	}
 		}
-
 });
 });
 </script>
