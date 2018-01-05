@@ -81,7 +81,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<li>
 			<a href="blog-timeline.jsp"><span class="icon">&#59160;</span> Stockage <span class="pip">12</span></a>
 			<ul class="submenu">
-				<li><a href="blog-new.jsp">Consulter</a></li>
+				<li><a href="/stocage/consulter.do">Consulter</a></li>
 				<li><a href="blog-table.jsp">Modifier le stockage</a></li>
 			</ul>
 		</li>

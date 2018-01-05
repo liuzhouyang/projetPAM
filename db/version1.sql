@@ -53,7 +53,7 @@ CREATE TABLE `detailcommande` (
   KEY `fk_detailCommande_Commande1_idx` (`Commande_idCommande`,`Commande_Utilisateur_idUtilisateur`),
   KEY `fk_detailCommande_Produits1_idx` (`Produits_idProduits`),
   CONSTRAINT `fk_detailCommande_Commande1` FOREIGN KEY (`Commande_idCommande`, `Commande_Utilisateur_idUtilisateur`) REFERENCES `commande` (`idCommande`, `Utilisateur_idUtilisateur`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_detailCommande_Produits1` FOREIGN KEY (`Produits_idProduits`) REFERENCES `produits` (`idProduits`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_detailCommande_Produits1` FOREIGN KEY (`Produits_idProduits`) REFERENCES `product` (`idproduct`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -72,7 +72,7 @@ CREATE TABLE `entree` (
   `Produits_idProduits` int(11) NOT NULL,
   PRIMARY KEY (`idEntree`),
   KEY `fk_Entree_Produits1_idx` (`Produits_idProduits`),
-  CONSTRAINT `fk_Entree_Produits1` FOREIGN KEY (`Produits_idProduits`) REFERENCES `produits` (`idProduits`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Entree_Produits1` FOREIGN KEY (`Produits_idProduits`) REFERENCES `product` (`idproduct`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -131,7 +131,7 @@ CREATE TABLE `stocage` (
   `quantite` int(11) NOT NULL,
   `Produits_idProduits` int(11) NOT NULL,
   KEY `fk_Stocage_Produits1_idx` (`Produits_idProduits`),
-  CONSTRAINT `fk_Stocage_Produits1` FOREIGN KEY (`Produits_idProduits`) REFERENCES `produits` (`idProduits`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Stocage_Produits1` FOREIGN KEY (`Produits_idProduits`) REFERENCES `product` (`idproduct`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
