@@ -4,11 +4,7 @@
 
 <%@include file="commun.jsp"%>
 
-<section class="alert">
-	<form method="link" action="addProduct.jsp">
-		 <button class="green">Create new product</button>
-	</form>
-</section>
+
 <section class="content">
 	<section class="widget">
 		<header>
@@ -80,6 +76,9 @@
 
 		</div>
 	</section>
+	<form method="link" action="addProduct.jsp">
+		 <button class="green">Create new product</button>
+	</form>
 </section>
 
 

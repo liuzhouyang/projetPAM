@@ -107,4 +107,14 @@ public class Product {
 	public void setImg(MultipartFile img) {
 		this.img = img;
 	}
+
+	@Override
+	public String toString() {
+		return "Product [idProduct=" + idProduct + ", title=" + title + ", marque=" + marque + ", categorie="
+				+ categorie + ", poid=" + poid + ", prix=" + prix + ", couleur=" + couleur + ", taille=" + taille
+				+ ", description=" + description + ", image=" + image + ", Utilisateur_idUtilisateur="
+				+ Utilisateur_idUtilisateur + ", img=" + img + "]";
+	}
+	
+	
 }

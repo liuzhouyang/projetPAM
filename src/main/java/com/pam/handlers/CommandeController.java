@@ -12,6 +12,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.commons.io.filefilter.FalseFileFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -54,6 +55,7 @@ public class CommandeController {
 			String fileName = fichier.getOriginalFilename();
 			if(fileName.endsWith(".xml")) {
 				File file = new File(path, fileName);
+				file.getParentFile().mkdirs();
 				fichier.transferTo(file);
 				mv.addObject("filePath", path+"\\"+fileName);
 				mv.addObject("fileName", fileName);

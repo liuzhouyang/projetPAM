@@ -53,8 +53,8 @@ public class ProductController {
 	@RequestMapping("addproduct.do")
 	public ModelAndView addProduct(Product p, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		int id = 1;
-//		int id = (int)session.getAttribute("userid");
+		//int id = 1;
+		int id = (int)session.getAttribute("userid");
 	/*	List<ObjectError> errors = br.getAllErrors();
 		if(errors.size() > 0) {
 			FieldError titleError = br.getFieldError("title");
@@ -114,9 +114,9 @@ public class ProductController {
 	@RequestMapping("listproduct.do")
 	public ModelAndView listProducts(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-	//	int id = (int)session.getAttribute("userid");
-		//List<Product> list = productService.listByIdUtilisateur(id);
-		List<Product> list = productService.list();
+		int id = (int)session.getAttribute("userid");
+		List<Product> list = productService.listByIdUtilisateur(id);
+		//List<Product> list = productService.list();
 		mav.addObject("list",list);
 		mav.setViewName("/product.jsp");
 		return mav;
@@ -140,27 +140,28 @@ public class ProductController {
 	@RequestMapping("modifProduct.do")
 	public ModelAndView modifProduct(Product product, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		int id = 1;
-//		int id = (int)session.getAttribute("userid");
-		if (product.getImg() != null) {
-			String fileName =  product.getIdProduct() + ".jpg";
-			product.setImage(fileName);
-			String imageFolder = session.getServletContext().getRealPath("img/origine");
-			String imageFolderSmall = session.getServletContext().getRealPath("img/small");
-			File file = new File(imageFolder,fileName);
-			file.getParentFile().mkdirs();
-			try {
-				product.getImg().transferTo(file);
-				BufferedImage bImage = ImageUtil.change2jpg(file);
-				ImageIO.write(bImage, "jpg", file);
-				File fileSmall = new File(imageFolderSmall, fileName);
-				ImageUtil.resizeImage(file, 56, 56, fileSmall);
-			} catch (Exception e) {
-				e.printStackTrace();
-				// TODO: handle exception
-			}
-		}
+//		int id = 1;
+		int id = (int)session.getAttribute("userid");
+//		if (product.getImg() != null) {
+//			String fileName =  product.getIdProduct() + ".jpg";
+//			product.setImage(fileName);
+//			String imageFolder = session.getServletContext().getRealPath("img/origine");
+//			String imageFolderSmall = session.getServletContext().getRealPath("img/small");
+//			File file = new File(imageFolder,fileName);
+//			file.getParentFile().mkdirs();
+//			try {
+//				product.getImg().transferTo(file);
+//				BufferedImage bImage = ImageUtil.change2jpg(file);
+//				ImageIO.write(bImage, "jpg", file);
+//				File fileSmall = new File(imageFolderSmall, fileName);
+//				ImageUtil.resizeImage(file, 56, 56, fileSmall);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//				// TODO: handle exception
+//			}
+//		}
 		product.setUtilisateur_idUtilisateur(id);
+		System.out.println(product);
 		productService.update(product);
 		mav.setViewName("/product/listproduct.do");
 		return mav;
@@ -172,8 +173,8 @@ public class ProductController {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = dbf.newDocumentBuilder();
 		Document document = db.parse(filePath);
-		//int id = (int) session.getAttribute("userid");
-		int id = 1;
+		int id = (int) session.getAttribute("userid");
+		//int id = 1;
 		NodeList productList = document.getElementsByTagName("product");
 		for (int i = 0; i < productList.getLength(); i++) {
 			Product product = new Product();
