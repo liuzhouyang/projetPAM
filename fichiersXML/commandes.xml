@@ -8,7 +8,7 @@
 		<Prix>50</Prix>
 		<Statut>En Transit</Statut>
 		<Produit>
-			<Id>12</Id>
+			<Id>1</Id>
 			<Quantite>2</Quantite>
 		</Produit>
 		<Produit>
@@ -16,7 +16,7 @@
 			<Quantite>2</Quantite>
 		</Produit>
 		<Produit>
-			<Id>15</Id>
+			<Id>3</Id>
 			<Quantite>1</Quantite>
 		</Produit>	
 	</commande>
